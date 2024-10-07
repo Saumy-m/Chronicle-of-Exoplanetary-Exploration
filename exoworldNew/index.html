@@ -1,0 +1,769 @@
+<html>
+    <head>
+        ExoWorld!
+        <Link rel="stylesheet" href="style.css">
+        <style>
+            .top-left-buttons {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+            }
+            .top-right-buttons {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+            }
+            .top-left-buttons button, .top-right-buttons button {
+                background-color: transparent;
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                margin-right: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                font-family: inherit;
+            }
+            .top-left-buttons button:hover, .top-right-buttons button:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            .logo {
+                font-size: 48px; /* Increased font size */
+                font-weight: bold; /* Added bold font weight */
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Added text shadow for better visibility */
+            }
+        </style>
+    </head>
+<div class="top-left-buttons">
+    <button>About</button>
+    <button>Research</button>
+    <button>Explore</button>
+</div>
+<div class="top-right-buttons">
+    
+    <button>3D-plot</button>
+    <a href="canvas.html">Planet Builder</a>
+    <button>Chatbot</button>
+</div>
+<h1 class='logo' style="color: #ff6a00;">
+   ExoWorld
+</h1>
+<input class='planet9' id='pluto' name='planet' type='radio'>
+<label class='pluto menu' for='pluto'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            6 Lyncis b
+        </h2>
+        <h3>178.0 light years</h3>
+    </div>
+</label>
+<input class='planet8' id='neptune' name='planet' type='radio'>
+<label class='neptune menu' for='neptune'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            75 Ceti b
+        </h2>
+        <h3>271.0 light years</h3>
+    </div>
+</label>
+<input class='planet7' id='uranus' name='planet' type='radio'>
+<label class='uranus menu' for='uranus'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            24 Bootis b
+        </h2>
+        <h3>313.0 light years</h3>
+    </div>
+</label>
+<input class='planet6' id='saturn' name='planet' type='radio'>
+<label class='saturn menu' for='saturn'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            18 Delphini b
+        </h2>
+        <h3>249.0 light years</h3>
+    </div>
+</label>
+<input class='planet5' id='jupiter' name='planet' type='radio'>
+<label class='jupiter menu' for='jupiter'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            17 Scorpii b
+        </h2>
+        <h3>408.0 light years</h3>
+    </div>
+</label>
+<input checked='checked' class='planet4' id='mars' name='planet' type='radio'>
+<label class='menu mars' for='mars'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            Kepler-186f
+        </h2>
+        <h3>582.5 light years</h3>
+    </div>
+</label>
+<input checked='checked' class='planet3' id='earth' name='planet' type='radio'>
+<label class='menu earth' for='earth'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            Kepler-452b
+        </h2>
+        <h3>1402 light years</h3>
+    </div>
+</label>
+<input checked='checked' class='planet2' id='venus' name='planet' type='radio'>
+<label class='menu venus' for='venus'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            14 Andromedae b
+        </h2>
+        <h3>246.0 light years</h3>
+    </div>
+</label>
+<input checked='checked' class='planet1' id='mercury' name='planet' type='radio'>
+<label class='menu mercury' for='mercury'>
+    <div class='preview'></div>
+    <div class='info'>
+        <h2>
+            <div class='pip'></div>
+            11 Comae Berenices b
+        </h2>
+        <h3>304.0 light years</h3>
+    </div>
+</label>
+<div class='solar'>
+    <div class='solar_systm'>
+        <div class='planet mercury'>
+            <div class='planet_description mercury'>
+                <h2>Planet</h2>
+                <h1>11 Comae Berenices b</h1>
+                <p>A massive gas giant orbiting a yellow-white dwarf star. It's about 19.4 times the mass of Jupiter and completes an orbit in just 326 days.</p>
+                <label for='readMercury'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+    <div class='solar_systm'>
+        <div class='planet venus'>
+            <div class='planet_description venus'>
+                <h2>Planet</h2>
+                <h1>14 Andromedae b</h1>
+                <p>A gas giant exoplanet that orbits a K-type star. Its mass is 4.8 Jupiter masses and it takes 186 days to complete one orbit of its star.</p>
+                <label for='readVenus'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+    <div class='solar_systm'>
+        <div class='planet earth'>
+            <div class='moon moon'>
+                <h3>Moon</h3>
+                <h2>Kepler-452b I</h2>
+            </div>
+            <div class='trajectory m'></div>
+            <div class='planet_description earth'>
+                <h2>Planet</h2>
+                <h1>Kepler-452b</h1>
+                <p>An Earth-like exoplanet orbiting within the habitable zone of a Sun-like star. It's often referred to as Earth's "older cousin" due to similarities with our planet.</p>
+                <label for='readEarth'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+    <div class='solar_systm'>
+        <div class='planet mars'>
+            <div class='moon kepler186f-1'>
+                <h3>Moon</h3>
+                <h2>Moon</h2>
+            </div>
+            <div class='trajectory d'></div>
+            <div class='moon kepler186f-2'>
+                <h3>Moon</h3>
+                <h2>Moon</h2>
+            </div>
+            <div class='trajectory p'></div>
+            <div class='planet_description mars'>
+                <h2>Planet</h2>
+                <h1>Kepler-186f</h1>
+                <p>A rocky exoplanet orbiting within the habitable zone of its star. It's known for its reddish appearance and is often called "Earth's cousin" due to its similar size.</p>
+                <label for='readMars'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+    <div class='solar_systm'>
+        <div class='planet jupiter'>
+            <div class='moon lo'>
+                <h3>Moon</h3>
+                <h2>Io</h2>
+            </div>
+            <div class='moon europa'>
+                <h3>Moon</h3>
+                <h2>Europa</h2>
+            </div>
+            <div class='moon ganymede'>
+                <h3>Moon</h3>
+                <h2>Ganymede</h2>
+            </div>
+            <div class='trajectory lop'></div>
+            <div class='trajectory eu'></div>
+            <div class='trajectory ga'></div>
+            <div class='planet_description jupiter'>
+                <h2>Planet</h2>
+                <h1>17 Scorpii b</h1>
+                <p>A gas giant exoplanet discovered in 2020. It orbits a G-type star every 1.6 years and has a mass of 4.32 Jupiter masses.</p>
+                <label for='readJupiter'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+    <div class='solar_systm'>
+        <div class='planet saturn'>
+            <div class='moon titan'>
+                <h3>Moon</h3>
+                <h2>Titan</h2>
+            </div>
+            <div class='moon dione'>
+                <h3>Moon</h3>
+                <h2>Dione</h2>
+            </div>
+            <div class='moon enceladus'>
+                <h3>Moon</h3>
+                <h2>Enceladus</h2>
+            </div>
+            <div class='trajectory ti'></div>
+            <div class='trajectory di'></div>
+            <div class='trajectory enc'></div>
+            <div class='planet_description saturn'>
+                <h2>Planet</h2>
+                <h1>18 Delphini b</h1>
+                <p>A gas giant exoplanet discovered in 2008. It orbits a K-type star with a period of 993 days and has a mass of 10.3 Jupiter masses.</p>
+                <label for='readSaturn'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+    <div class='solar_systm'>
+        <div class='planet uranus'>
+            <div class='moon miranda'>
+                <h3>Moon</h3>
+                <h2>Miranda</h2>
+            </div>
+            <div class='moon ariel'>
+                <h3>Moon</h3>
+                <h2>Ariel</h2>
+            </div>
+            <div class='moon umbriel'>
+                <h3>Moon</h3>
+                <h2>Umbriel</h2>
+            </div>
+            <div class='trajectory mir'></div>
+            <div class='trajectory ari'></div>
+            <div class='trajectory umb'></div>
+            <div class='planet_description uranus'>
+                <h2>Planet</h2>
+                <h1>24 Bootis b</h1>
+                <p>A gas giant exoplanet discovered in 2018. It orbits a K-type star every 30.35 days and has a mass of 0.91 Jupiter masses, making it one of the least massive known hot Jupiters.</p>
+                <label for='readUranus'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+    <div class='solar_systm'>
+        <div class='planet neptune'>
+            <div class='moon triton'>
+                <h3>Moon</h3>
+                <h2>Triton</h2>
+            </div>
+            <div class='moon proteus'>
+                <h3>Moon</h3>
+                <h2>Proteus</h2>
+            </div>
+            <div class='moon nereid'>
+                <h3>Moon</h3>
+                <h2>Nereid</h2>
+            </div>
+            <div class='trajectory tri'></div>
+            <div class='trajectory pro'></div>
+            <div class='trajectory ner'></div>
+            <div class='planet_description neptune'>
+                <h2>Planet</h2>
+                <h1>75 Ceti b</h1>
+                <p>A gas giant exoplanet discovered in 2012. It orbits a K-type star with a period of 692 days and has a mass of 3 Jupiter masses.</p>
+                <label for='readNeptune'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+    <div class='solar_systm'>
+        <div class='planet pluto'>
+            <div class='planet_description pluto'>
+                <h2>Exoplanet</h2>
+                <h1>6 Lyncis b</h1>
+                <p>A gas giant exoplanet discovered in 2008. It orbits a K-type star with a period of 899 days and has a mass of 2.01 Jupiter masses.</p>
+                <label for='readPluto'>
+                    <a>
+                        Read Mor
+                        <span>e</span>
+                    </a>
+                </label>
+            </div>
+            <div class='overlay'></div>
+        </div>
+    </div>
+</div>
+<input class='read' id='readMercury' name='mercuryRead' type='radio'>
+<label class='closeBig' for='closeMercury'></label>
+<input class='read' id='closeMercury' name='mercuryRead' type='radio'>
+<div class='panel'>
+    <h1>11 Comae Berenices b</h1>
+    <p>11 Comae Berenices b is a gas giant exoplanet that orbits a G-type star. Its mass is 19.4 Jupiter masses, it takes 0.89 years to complete one orbit of its star, and is 1.29 AU from its star. Its discovery was announced in 2007.</p>
+    <p>This planet is particularly interesting due to its high mass, which places it close to the boundary between planets and brown dwarfs. Its relatively short orbital period for such a massive planet also makes it an intriguing target for studies of planetary formation and migration.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/214_HD_108147_b_Art.jpg'>
+    <h2>11 Comae Berenices b is one of the most massive known exoplanets.</h2>
+    <p>With a mass of 19.4 Jupiter masses, it's among the heaviest planets discovered, bordering on brown dwarf territory. This makes it an important object for understanding the boundary between planets and brown dwarfs.</p>
+    <h2>The planet orbits its star in less than a year.</h2>
+    <p>Despite its large mass, 11 Comae Berenices b completes an orbit in just 326 days. This is a relatively short period for such a massive planet, suggesting it may have migrated inward from where it formed.</p>
+    <h2>11 Comae Berenices b orbits a yellow-white dwarf star.</h2>
+    <p>The host star is more massive and hotter than our Sun, classified as an F-type subgiant. This makes the planetary system quite different from our own.</p>
+    <h2>The planet was discovered using the radial velocity method.</h2>
+    <p>Like many exoplanets, 11 Comae Berenices b was found by detecting the wobble it causes in its parent star's motion. This method is particularly effective for finding massive planets like this one.</p>
+    <br>
+</div>
+<input class='read' id='readVenus' name='venusRead' type='radio'>
+<label class='closeBig' for='closeVenus'></label>
+<input class='read' id='closeVenus' name='venusRead' type='radio'>
+<div class='panel'>
+    <h1>14 Andromedae b</h1>
+    <p>14 Andromedae b is a gas giant exoplanet that orbits a K-type star. Its mass is 4.8 Jupiter masses, it takes 186 days to complete one orbit of its star, and is 0.83 AU from its star. Its discovery was announced in 2008.</p>
+    <p>This planet is notable for its orbit, which is nearly circular, unlike many other known exoplanets. This characteristic makes it an interesting target for studies of planetary formation and evolution.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/463_HD222582b_art.jpg'>
+    <h2>14 Andromedae b has an almost circular orbit.</h2>
+    <p>Unlike many exoplanets which have highly elliptical orbits, 14 Andromedae b's orbit is nearly circular. This is unusual for a planet of its mass and proximity to its star.</p>
+    <h2>The planet orbits a K-type orange giant star.</h2>
+    <p>14 Andromedae, the host star, is larger and cooler than our Sun. It has exhausted the hydrogen fuel in its core and has expanded and cooled off, becoming an orange giant.</p>
+    <h2>14 Andromedae b is in the "Goldilocks zone" of its star.</h2>
+    <p>Despite being much closer to its star than Earth is to the Sun, the planet is in the habitable zone because its star is cooler. However, as a gas giant, it's unlikely to harbor life as we know it.</p>
+    <h2>The system is relatively old.</h2>
+    <p>The 14 Andromedae system is estimated to be about 4.3 billion years old, making it slightly younger than our solar system.</p>
+    <br>
+</div>
+<input class='read' id='readEarth' name='earthRead' type='radio'>
+<label class='closeBig' for='closeEarth'></label>
+<input class='read' id='closeEarth' name='earthRead' type='radio'>
+<div class='panel'>
+    <h1>Kepler-452b</h1>
+    <p>Kepler-452b is a super-Earth exoplanet orbiting within the habitable zone of the Sun-like star Kepler-452. It has a radius about 1.6 times that of Earth and completes an orbit around its star every 384.8 days. Its discovery was announced in 2015.</p>
+    <p>This planet is particularly interesting because it's the first near-Earth-size world to be found in the habitable zone of a star very similar to our Sun. Its star is 1.5 billion years older than our Sun, giving a preview of what might happen to our planet in the distant future.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/2288_kepler452b_artistconcept_2.jpg'>
+    <h2>Kepler-452b is often called Earth's "older cousin".</h2>
+    <p>The planet is about 60% larger in diameter than Earth and is considered a super-Earth-size planet. While its mass and composition are not yet determined, previous research suggests that planets of this size have a good chance of being rocky.</p>
+    <h2>The planet orbits a G2-type star, similar to our Sun.</h2>
+    <p>Kepler-452 is 6 billion years old, 1.5 billion years older than our Sun. It has the same temperature, and is 20% brighter and 10% larger in diameter.</p>
+    <h2>Kepler-452b is in the habitable zone of its star.</h2>
+    <p>The planet is at a distance from its star where liquid water might pool on the surface. However, scientists are not sure if Kepler-452b can support life as we know it.</p>
+    <h2>The planet has a hypothetical moon: Kepler-452b I.</h2>
+    <p>While no moon has been detected around Kepler-452b, scientists speculate that such a large planet in the habitable zone could potentially host a moon. This hypothetical moon has been named Kepler-452b I in our visualization.</p>
+    <br>
+</div>
+<input class='read' id='readMars' name='marsRead' type='radio'>
+<label class='closeBig' for='closeMars'></label>
+<input class='read' id='closeMars' name='marsRead' type='radio'>
+<div class='panel'>
+    <h1>Kepler-186f</h1>
+    <p>Kepler-186f is a rocky exoplanet that orbits an M-dwarf star. Its radius is about 1.11 times that of Earth, and it takes 129.9 days to complete one orbit of its star. It is located about 582.5 light-years from Earth in the constellation Cygnus. Its discovery was announced in 2014.</p>
+    <p>This planet is particularly interesting because it's the first Earth-sized planet discovered in the habitable zone of another star. Its reddish appearance is due to the light from its cooler, redder host star.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/2288_kepler452b_artistconcept_2.jpg'>
+    <h2>Kepler-186f is often referred to as a "cousin" of Earth.</h2>
+    <p>The planet is very close in size to Earth and orbits within the habitable zone of its star. This means it could potentially have liquid water on its surface, although this hasn't been confirmed.</p>
+    <h2>The planet orbits an M-dwarf star, much cooler and redder than our Sun.</h2>
+    <p>Kepler-186 is about half the size and mass of our Sun. It's much cooler, which gives Kepler-186f its characteristic reddish hue when viewed from space.</p>
+    <h2>Kepler-186f receives about one-third of the energy from its star that Earth gets from the Sun.</h2>
+    <p>Despite being in the habitable zone, the planet receives much less light and heat than Earth. This could mean that if it has an atmosphere similar to Earth's, its surface might be more like Mars - cold, dry, and with large ice caps.</p>
+    <h2>The planet has two hypothetical moons: Kepler-186f I and Kepler-186f II.</h2>
+    <p>While no moons have been detected around Kepler-186f, scientists speculate that such a planet could potentially host moons. These hypothetical moons have been named Kepler-186f I and Kepler-186f II in our visualization.</p>
+    <br>
+</div>
+<input class='read' id='readJupiter' name='jupiterRead' type='radio'>
+<label class='closeBig' for='closeJupiter'></label>
+<input class='read' id='closeJupiter' name='jupiterRead' type='radio'>
+<div class='panel'>
+    <h1>17 Scorpii b</h1>
+    <p>17 Scorpii b is a gas giant exoplanet that orbits a G-type star. Its mass is 4.32 Jupiter masses, it takes 1.6 years to complete one orbit of its star, and is 1.45 AU from its star. Its discovery was announced in 2020.</p>
+    <p>This planet is a relatively recent discovery, and its properties make it an interesting target for future studies of exoplanetary atmospheres and formation processes.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/5108_exoplanet20201214-16.jpg'>
+    <h2>17 Scorpii b is a "warm Jupiter".</h2>
+    <p>Unlike hot Jupiters that orbit very close to their stars, or cold Jupiters far out in their systems, 17 Scorpii b occupies a middle ground. This makes it valuable for understanding planetary migration and evolution.</p>
+    <h2>The planet orbits a star similar to our Sun.</h2>
+    <p>17 Scorpii is a G-type star, similar to our Sun but slightly more massive and luminous. This similarity makes the system useful for comparative studies with our own solar system.</p>
+    <h2>17 Scorpii b has a nearly circular orbit.</h2>
+    <p>With an eccentricity of only 0.06, the planet's orbit is almost circular. This is somewhat unusual for a planet of its mass and distance from its star.</p>
+    <h2>The planet was discovered using the radial velocity method.</h2>
+    <p>Like many exoplanets, 17 Scorpii b was found by detecting the wobble it causes in its parent star's motion. This method is particularly effective for finding massive planets like this one.</p>
+    <br>
+</div>
+<input class='read' id='readSaturn' name='saturnRead' type='radio'>
+<label class='closeBig' for='closeSaturn'></label>
+<input class='read' id='closeSaturn' name='saturnRead' type='radio'>
+<div class='panel'>
+    <h1>18 Delphini b</h1>
+    <p>18 Delphini b is a gas giant exoplanet that orbits a K-type star. Its mass is 10.3 Jupiter masses, it takes 993 days to complete one orbit of its star, and is 2.6 AU from its star. Its discovery was announced in 2008.</p>
+    <p>This planet is notable for its high mass and relatively wide orbit, making it an interesting case study for theories of planet formation and evolution.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/1294_exo20160504-16.jpg'>
+    <h2>18 Delphini b is one of the most massive known exoplanets.</h2>
+    <p>With a mass of 10.3 Jupiter masses, it's close to the boundary between planets and brown dwarfs. This makes it an important object for understanding the limits of planetary mass.</p>
+    <h2>The planet orbits an evolved star.</h2>
+    <p>18 Delphini, the host star, is a K-type giant star. It has exhausted the hydrogen in its core and has expanded and cooled off, becoming a giant star.</p>
+    <h2>18 Delphini b has a nearly circular orbit.</h2>
+    <p>Despite its large mass and distance from its star, the planet's orbit has a low eccentricity of 0.08. This is somewhat unusual and could provide insights into the planet's formation and evolutionary history.</p>
+    <h2>The system is relatively old.</h2>
+    <p>The 18 Delphini system is estimated to be about 2.3 billion years old. The advanced age of the star means that the planet has likely undergone significant evolution since its formation.</p>
+    <br>
+</div>
+<input class='read' id='readUranus' name='uranusRead' type='radio'>
+<label class='closeBig' for='closeUranus'></label>
+<input class='read' id='closeUranus' name='uranusRead' type='radio'>
+<div class='panel'>
+    <h1>24 Bootis b</h1>
+    <p>24 Bootis b is a gas giant exoplanet that orbits a K-type star. Its mass is 0.91 Jupiter masses, it takes 30.35 days to complete one orbit of its star, and is 0.19 AU from its star. Its discovery was announced in 2018.</p>
+    <p>This planet is particularly interesting because it's one of the least massive hot Jupiters known, providing valuable insights into the formation and evolution of this class of planets.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/2486_hotjupiter-1600x900.jpg'>
+    <h2>24 Bootis b is a "hot Jupiter".</h2>
+    <p>It orbits very close to its star, completing an orbit in just over a month. This proximity means the planet is likely tidally locked, with one side always facing its star.</p>
+    <h2>The planet orbits an evolved star.</h2>
+    <p>24 Bootis, the host star, is a K-type giant star. It has exhausted the hydrogen in its core and has expanded and cooled off, becoming a giant star.</p>
+    <h2>24 Bootis b has a nearly circular orbit.</h2>
+    <p>With an eccentricity of only 0.04, the planet's orbit is almost perfectly circular. This is common for hot Jupiters due to tidal interactions with their host stars.</p>
+    <h2>The planet is one of the least massive hot Jupiters known.</h2>
+    <p>At 0.91 Jupiter masses, it's less massive than Jupiter despite being much closer to its star. This makes it an important data point for understanding the mass distribution of hot Jupiters.</p>
+    <br>
+</div>
+<input class='read' id='readNeptune' name='neptuneRead' type='radio'>
+<label class='closeBig' for='closeNeptune'></label>
+<input class='read' id='closeNeptune' name='neptuneRead' type='radio'>
+<div class='panel'>
+    <h1>75 Ceti b</h1>
+    <p>75 Ceti b is a gas giant exoplanet that orbits a K-type star. Its mass is 3 Jupiter masses, it takes 692 days to complete one orbit of its star, and is 2.1 AU from its star. Its discovery was announced in 2012.</p>
+    <p>This planet is interesting due to its location in the habitable zone of its star, although as a gas giant it's unlikely to harbor life as we know it.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/1394_exo20160913-16.jpg'>
+    <h2>75 Ceti b orbits within its star's habitable zone.</h2>
+    <p>Despite being a gas giant, the planet's orbit places it in the region where liquid water could exist on a rocky surface. This makes any potential moons of the planet intriguing targets in the search for habitable environments.</p>
+    <h2>The planet orbits an evolved star.</h2>
+    <p>75 Ceti, the host star, is a K-type giant star. It has exhausted the hydrogen in its core and has expanded and cooled off, becoming a giant star.</p>
+    <h2>75 Ceti b has a low orbital eccentricity.</h2>
+    <p>With an eccentricity of 0.12, the planet's orbit is only slightly elliptical. This is interesting given the planet's distance from its star, as more distant planets often have more eccentric orbits.</p>
+    <h2>The system is relatively old.</h2>
+    <p>The 75 Ceti system is estimated to be about 3 billion years old. The advanced age of the star means that the planet has likely undergone significant evolution since its formation.</p>
+</div>
+<input class='read' id='readPluto' name='plutoRead' type='radio'>
+<label class='closeBig' for='closePluto'></label>
+<input class='read' id='closePluto' name='plutoRead' type='radio'>
+<div class='panel'>
+    <h1>6 Lyncis b</h1>
+    <p>6 Lyncis b is a gas giant exoplanet that orbits a K-type star. Its mass is 2.01 Jupiter masses, it takes 899 days to complete one orbit of its star, and is 2.11 AU from its star. Its discovery was announced in 2008.</p>
+    <p>This exoplanet is particularly interesting due to its location in the "sweet spot" for gas giant formation, making it a valuable case study for planetary formation theories.</p>
+    <p>The 6 Lyncis system is relatively old, estimated to be about 5 billion years old. This advanced age provides a unique opportunity to study the long-term evolution of gas giants and their host stars.</p>
+    <img src='https://exoplanets.nasa.gov/system/resources/detail_files/1294_exo20160504-16.jpg'>
+    <h2>A year on 6 Lyncis b is 899 Earth days long.</h2>
+    <p>6 Lyncis b takes nearly two and a half Earth years to complete one orbit around its star. This extended orbital period places it in a temperate zone, potentially allowing for interesting atmospheric dynamics and chemical processes.</p>
+    <h2>6 Lyncis b is a "super-Jupiter".</h2>
+    <p>With a mass of 2.01 Jupiter masses, 6 Lyncis b is significantly more massive than Jupiter. This places it in the category of "super-Jupiters", providing insights into the upper mass limits of gas giant planets.</p>
+    <h2>The planet orbits an evolved star.</h2>
+    <p>6 Lyncis, the host star, is a K-type subgiant star. It has begun to exhaust the hydrogen in its core and is in the process of expanding and cooling off. This relationship between an evolved star and its planet offers a glimpse into the future of our own solar system.</p>
+    <h2>6 Lyncis b has a moderately eccentric orbit.</h2>
+    <p>With an eccentricity of 0.134, 6 Lyncis b's orbit is more elliptical than Earth's. This eccentricity could lead to interesting seasonal variations and tidal effects, potentially influencing the planet's internal structure and any potential moons it might have.</p>
+    <br>
+</div>
+<input class='read' id='readVenus' name='venusRead' type='radio'>
+<label class='closeBig' for='closeVenus'></label>
+<input class='read' id='closeVenus' name='venusRead' type='radio'>
+<div class='panel'>
+    <h1>Venus</h1>
+    <p>Venus, the second planet from the sun, is named for the Roman goddess of love and beauty. The planet — the only
+        planet named after a female — may have been named for the most beautiful deity of her pantheon because it shone
+        the brightest of the five planets known to ancient astronomers.</p>
+    <p>In ancient times, Venus was often thought to be two different stars, the evening star and the morning star — that
+        is, the ones that first appeared at sunset and sunrise. In Latin, they were respectively known as Vesper and
+        Lucifer. In Christian times, Lucifer, or "light-bringer," became known as the name of Satan before his fall.
+        However, further observations of Venus in the space age show a very hellish environment. This makes Venus a very
+        difficult planet to observe from up close, because spacecraft do not survive long on its surface.</p>
+    <img src='https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2014/2-whatistheave.jpg'>
+    <h2>A day on Venus lasts longer than a year.</h2>
+    <p>It takes 243 Earth days to rotate once on its axis (sidereal day). The planet's orbit around the Sun takes 225
+        Earth days, compared to the Earth's 365. A day on the surface of Venus (solar day) takes 117 Earth days.</p>
+    <h2>Venus rotates in the opposite direction to most other planets.</h2>
+    <p>This means that Venus is rotating in the opposite direction to the Sun, this is also know as a retrograde
+        rotation. A possible reason might be a collision in the past with an asteroid or other object that caused the
+        planet to alter its rotational path. It also differs from most other planets in our solar systm by having no
+        natural satellites.</p>
+    <h2>Venus is the second brightest object in the night sky.</h2>
+    <p>Only the Moon is brighter. With a magnitude of between -3.8 to -4.6 Venus is so bright it can be seen during
+        daytime on a clear day.</p>
+    <h2>Atmospheric pressure on Venus is 92 times greater than the Earth's.</h2>
+    <p>While its size and mass are similar to Earth, the small asteroids are crushed when entering its atmosphere,
+        meaning no small craters lie on the surface of the planet. The pressure felt by a human on the surface would be
+        equivalent to that experienced deep beneath the sea on Earth.</p>
+    <br>
+</div>
+<input class='read' id='readEarth' name='earthRead' type='radio'>
+<label class='closeBig' for='closeEarth'></label>
+<input class='read' id='closeEarth' name='earthRead' type='radio'>
+<div class='panel'>
+    <h1>Earth</h1>
+    <p>Earth, our home, is the third planet from the sun. It is the only planet known to have an atmosphere containing
+        free oxygen, oceans of liquid water on its surface, and, of course, life.</p>
+    <p>Earth is the fifth largest of the planets in the solar systm — smaller than the four gas giants, Jupiter, Saturn,
+        Uranusand Neptune, but larger than the three other rocky planets,</p>
+    <img src='https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350'>
+    <h2>The Earth's rotation is gradually slowing.</h2>
+    <p>This deceleration is happening almost imperceptibly, at approximately 17 milliseconds per hundred years, although
+        the rate at which it occurs is not perfectly uniform. This has the effect of lengthening our days, but it
+        happens so slowly that it could be as much as 140 million years before the length of a day will have increased
+        to 25 hours.</p>
+    <h2>The Earth was once believed to be the centre of the universe.</h2>
+    <p>Due to the apparent movements of the Sun and planets in relation to their viewpoint, ancient scientists insisted
+        that the Earth remained static, whilst other celestial bodies travelled in circular orbits around it.
+        Eventually, the view that the Sun was at the centre of the universe was postulated by Copernicus, though this is
+        also not the case.</p>
+    <h2>Earth has a powerful magnetic field.</h2>
+    <p>This phenomenon is caused by the nickel-iron core of the planet, coupled with its rapid rotation. This field
+        protects the Earth from the effects of solar wind.</p>
+    <h2>There is only one natural satellite of the planet Earth.</h2>
+    <p>As a percentage of the size of the body it orbits, the Moon is the largest satellite of any planet in our solar
+        systm. In real terms, however, it is only the fifth largest natural satellite.</p>
+    <br>
+</div>
+<input class='read' id='readMars' name='marsRead' type='radio'>
+<label class='closeBig' for='closeMars'></label>
+<input class='read' id='closeMars' name='marsRead' type='radio'>
+<div class='panel'>
+    <h1>Mars</h1>
+    <p>Mars is the fourth planet from the sun. Befitting the red planet's bloody color, the Romans named it after their
+        god of war. The Romans copied the ancient Greeks, who also named the planet after their god of war, Ares. Other
+        civilizations also typically gave the planet names based on its color — for example, the Egyptians named it "Her
+        Desher," meaning "the red one," while ancient Chinese astronomers dubbed it "the fire star."</p>
+    <img
+        src='https://1.bp.blogspot.com/-ou7Je3OVg6U/WYtxDqjNp_I/AAAAAAAACSQ/fsopS5VtFg4bmlv8hQNfiRYfJqTygCotQCLcBGAs/s2048/Martian%2Blandscape%2Bby%2BAmante%2BLombardi.jpg'>
+    <h2>Mars and Earth have approximately the same landmass.</h2>
+    <p>Even though Mars has only 15% of the Earth's volume and just over 10% of the Earth's mass, around two thirds of
+        the Earth's surface is covered in water. Martian surface gravity is only 37% of the Earth's (meaning you could
+        leap nearly three times higher on Mars).</p>
+    <h2>Mars is home to the tallest mountain in the solar systm.</h2>
+    <p>Olympus Mons, a shield volcano, is 21km high and 600km in diameter. Despite having formed over billions of years,
+        evidence from volcanic lava flows is so recent many scientists believe it could still be active.</p>
+    <h2>Only 18 missions to Mars have been successful.</h2>
+    <p>As of September 2014 there have been 40 missions to Mars, including orbiters, landers and rovers but not counting
+        flybys. The most recent arrivals include the Mars Curiosity mission in 2012, the MAVEN mission, which arrived on
+        September 22, 2014, followed by the Indian Space Research Organization's MOM Mangalyaan orbiter, which arrived
+        on September 24, 2014. The next missions to arrive will be the European Space Agency's ExoMars mission,
+        comprising an orbiter, lander, and a rover, followed by NASA's InSight robotic lander mission, slated for launch
+        in March 2016 and a planned arrival in September, 2016.</p>
+    <h2>Mars has the largest dust storms in the solar systm.</h2>
+    <p>They can last for months and cover the entire planet. The seasons are extreme because its elliptical
+        (oval-shaped) orbital path around the Sun is more elongated than most other planets in the solar systm.</p>
+    <br>
+</div>
+<input class='read' id='readJupiter' name='jupiterRead' type='radio'>
+<label class='closeBig' for='closeJupiter'></label>
+<input class='read' id='closeJupiter' name='jupiterRead' type='radio'>
+<div class='panel'>
+    <h1>Jupiter</h1>
+    <p>Jupiter is the largest planet in the solar systm. Fittingly, it was named after the king of the gods in Roman
+        mythology. In a similar manner, the ancient Greeks named the planet after Zeus, the king of the Greek pantheon.
+    </p>
+    <p>Jupiter helped revolutionize the way we saw the universe and ourselves in 1610, when Galileo discovered Jupiter's
+        four large moons — Io, Europa, Ganymede and Callisto, now known as the Galilean moons. This was the first time
+        that celestial bodies were seen circling an object other than Earth, major support of the Copernican view that
+        Earth was not the center of the universe.</p>
+    <img src='http://hanaleikauaivacation.com/wp-content/uploads/parser/jupiter-landscape-1.jpg'>
+    <h2>Jupiter is the fourth brightest object in the solar systm.</h2>
+    <p>Only the Sun, Moon and Venus are brighter. It is one of five planets visible to the naked eye from Earth.</p>
+    <h2>The ancient Babylonians were the first to record their sightings of Jupiter.</h2>
+    <p>This was around the 7th or 8th century BC. Jupiter is named after the king of the Roman gods. To the Greeks, it
+        represented Zeus, the god of thunder. The Mesopotamians saw Jupiter as the god Marduk and patron of the city of
+        Babylon. Germanic tribes saw this planet as Donar, or Thor.</p>
+    <h2>Jupiter has the shortest day of all the planets.</h2>
+    <p>It turns on its axis once every 9 hours and 55 minutes. The rapid rotation flattens the planet slightly, giving
+        it an oblate shape.</p>
+    <h2>Jupiter orbits the Sun once every 11.8 Earth years.</h2>
+    <p>From our point of view on Earth, it appears to move slowly in the sky, taking months to move from one
+        constellation to another.</p>
+    <br>
+</div>
+<input class='read' id='readSaturn' name='saturnRead' type='radio'>
+<label class='closeBig' for='closeSaturn'></label>
+<input class='read' id='closeSaturn' name='saturnRead' type='radio'>
+<div class='panel'>
+    <h1>Saturn</h1>
+    <p>Saturn is the sixth planet from the sun and the second largest planet in the solar systm. Saturn was the Roman
+        name for Cronus, the lord of the Titans in Greek mythology. Saturn is the root of the English word "Saturday."
+    </p>
+    <p>Saturn is the farthest planet from Earth visible to the naked human eye, but it is through a telescope that the
+        planet's most outstanding features can be seen: Saturn's rings. Although the other gas giants in the solar systm
+        — Jupiter, Uranus and Neptune — also have rings, those of Saturn are without a doubt the most extraordinary.</p>
+    <img src='http://ak0.picdn.net/shutterstock/videos/4049260/thumb/1.jpg'>
+    <h2>Saturn can be seen with the naked eye.</h2>
+    <p>It is the fifth brightest object in the solar systm and is also easily studied through binoculars or a small
+        telescope.</p>
+    <h2>Saturn was known to the ancients, including the Babylonians and Far Eastern observers.</h2>
+    <p>It is named for the Roman god Saturnus, and was known to the Greeks as Cronus.</p>
+    <h2>Saturn is the flattest planet.</h2>
+    <p>Its polar diameter is 90% of its equatorial diameter, this is due to its low density and fast rotation. Saturn
+        turns on its axis once every 10 hours and 34 minutes giving it the second-shortest day of any of the solar
+        systm's planets.</p>
+    <h2>Saturn orbits the Sun once every 29.4 Earth years.</h2>
+    <p>Its slow movement against the backdrop of stars earned it the nickname of "Lubadsagush" from the ancient
+        Assyrians. The name means "oldest of the old".</p>
+    <br>
+</div>
+<input class='read' id='readUranus' name='uranusRead' type='radio'>
+<label class='closeBig' for='closeUranus'></label>
+<input class='read' id='closeUranus' name='uranusRead' type='radio'>
+<div class='panel'>
+    <h1>Uranus</h1>
+    <p>Uranus is the seventh planet from the sun and the first to be discovered by scientists. Although Uranus is
+        visible to the naked eye, it was long mistaken as a star because of the planet's dimness and slow orbit. The
+        planet is also notable for its dramatic tilt, which causes its axis to point nearly directly at the sun.</p>
+    <p>British astronomer William Herschel discovered Uranus accidentally on March 13, 1781, with his telescope while
+        surveying all stars down to those about 10 times dimmer than can be seen by the naked eye. One "star" seemed
+        different, and within a year Uranus was shown to follow a planetary orbit.</p>
+    <img src='http://www.cosmosup.com/wp-content/uploads/2016/02/Uranus-Facts-About-the-Planet-Uranus-700x325.jpg'>
+    <h2>Uranus was officially discovered by Sir William Herschel in 1781.</h2>
+    <p>It is too dim to have been seen by the ancients. At first Herschel thought it was a comet, but several years
+        later it was confirmed as a planet. Herscal tried to have his discovery named "Georgian Sidus" after King George
+        III. The name Uranus was suggested by astronomer Johann Bode. The name comes from the ancient Greek deity
+        Ouranos.</p>
+    <h2>Uranus turns on its axis once every 17 hours, 14 minutes.</h2>
+    <p>The planet rotates in a retrograde direction, opposite to the way Earth and most other planets turn.</p>
+    <h2>Uranus makes one trip around the Sun every 84 Earth years.</h2>
+    <p>During some parts of its orbit one or the other of its poles point directly at the Sun and get about 42 years of
+        direct sunlight. The rest of the time they are in darkness.</p>
+    <h2>Uranus is often referred to as an "ice giant" planet.</h2>
+    <p>Like the other gas giants, it has a hydrogen upper layer, which has helium mixed in. Below that is an icy
+        "mantle, which surrounds a rock and ice core. The upper atmosphere is made of water, ammonia and the methane ice
+        crystals that give the planet its pale blue colour.</p>
+    <br>
+</div>
+<input class='read' id='readNeptune' name='neptuneRead' type='radio'>
+<label class='closeBig' for='closeNeptune'></label>
+<input class='read' id='closeNeptune' name='neptuneRead' type='radio'>
+<div class='panel'>
+    <h1>Neptune</h1>
+    <p>Neptune is the eighth planet from the sun. It was the first planet to get its existence predicted by mathematical
+        calculations before it was actually seen through a telescope on Sept. 23, 1846. Irregularities in the orbit of
+        Uranus led French astronomer Alexis Bouvard to suggest that the gravitational pull from another celestial body
+        might be responsible. German astronomer Johann Galle then relied on subsequent calculations to help spot Neptune
+        via telescope. Previously, astronomer Galileo Galilei sketched the planet, but he mistook it for a star due to
+        its slow motion. In accordance with all the other planets seen in the sky, this new world was given a name from
+        Greek and Roman mythology — Neptune, the Roman god of the sea.</p>
+    <p>Only one mission has flown by Neptune – Voyager 2 in 1989 – meaning that astronomers have done most studies using
+        ground-based telescopes. Today, there are still many mysteries about the cool, blue planet, such as why its
+        winds are so speedy and why its magnetic field is offset.</p>
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy8Dd14tbXAzh1iz-EJl9tulRwH7Bb-SxX6sXpKFDbqb-NKwpE'>
+    <h2>Neptune was not known to the ancients.</h2>
+    <p>It is not visible to the naked eye and was first observed in 1846. Its position was determined using mathematical
+        predictions. It was named after the Roman god of the sea.</p>
+    <h2>Neptune spins on its axis very rapidly.</h2>
+    <p>Its equatorial clouds take 18 hours to make one rotation. This is because Neptune is not solid body.</p>
+    <h2>Neptune is the smallest of the ice giants.</h2>
+    <p>Despite being smaller than Uranus, Neptune has a greater mass. Below its heavy atmosphere, Uranus is made of
+        layers of hydrogen, helium, and methane gases. They enclose a layer of water, ammonia and methane ice. The inner
+        core of the planet is made of rock.</p>
+    <h2>The atmosphere of Neptune is made of hydrogen and helium, with some methane.</h2>
+    <p>The methane absorbs red light, which makes the planet appear a lovely blue. High, thin clouds drift in the upper
+        atmosphere.</p>
+</div>
+<input class='read' id='readPluto' name='plutoRead' type='radio'>
+<label class='closeBig' for='closePluto'></label>
+<input class='read' id='closePluto' name='plutoRead' type='radio'>
+<div class='panel'>
+    <h1>Pluto</h1>
+    <p>Pluto, once considered the ninth and most distant planet from the sun, is now the largest known dwarf planet in
+        the solar systm. It is also one of the largest known members of the Kuiper Belt, a shadowy zone beyond the orbit
+        of Neptune thought to be populated by hundreds of thousands of rocky, icy bodies each larger than 62 miles (100
+        kilometers) across, along with 1 trillion or more comets.</p>
+    <p>In 2006, Pluto was reclassified as a dwarf planet, a change widely thought of as a demotion. The question of
+        Pluto's planet status has attracted controversy and stirred debate in the scientific community, and among the
+        general public, since then. In 2017, a science group (including members of the New Horizon mission) proposed a
+        new definition of planethood based on "round objects in space smaller than stars," which would make the number
+        of planets in our solar systm expand from 8 to roughly 100.</p>
+    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/asd.jpeg'>
+    <h2>Pluto is named after the Greek god of the underworld.</h2>
+    <p>This is a later name for the more well known Hades and was proposed by Venetia Burney an eleven year old
+        schoolgirl from Oxford, England.</p>
+    <h2>Pluto was reclassified from a planet to a dwarf planet in 2006.</h2>
+    <p>This is when the IAU formalised the definition of a planet as “A planet is a celestial body that (a) is in orbit
+        around the Sun, (b) has sufficient mass for its self-gravity to overcome rigid body forces so that it assumes a
+        hydrostatic equilibrium (nearly round) shape, and (c) has cleared the neighbourhood around its orbit.”</p>
+    <h2>Pluto was discovered on February 18th, 1930 by the Lowell Observatory.</h2>
+    <p>For the 76 years between Pluto being discovered and the time it was reclassified as a dwarf planet it completed
+        under a third of its orbit around the Sun.</p>
+    <h2>Pluto has five known moons.</h2>
+    <p>The moons are Charon (discovered in 1978,), Hydra and Nix (both discovered in 2005), Kerberos originally P4
+        (discovered 2011) and Styx originally P5 (discovered 2012) official designations S/2011 (134340) 1 and S/2012
+        (134340) 1.</p>
+</div>
+
+</html>
