@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background-image: url('/images/globe.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column-reverse; /* Stack children vertically */
+  justify-content: space-between; /* Distribute space between header, main, and footer */
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+/* globals.css or the CSS file for your component */
+.chat-button {
+  position: fixed;
+  bottom: 20px; /* Adjust distance from the bottom */
+  right: 20px; /* Adjust distance from the right */
+  background-color: #ffffff; /* Background color */
+  border: none;
+  border-radius: 50%; /* Circular button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Raised effect */
+  cursor: pointer;
+  padding: 10px; /* Space around the icon */
+  transition: transform 0.2s; /* Smooth transition */
+}
+
+.chat-button:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
